@@ -26,10 +26,9 @@ namespace YinYangShiGua2.core
 
         private bool checkNoTiLi()
         {
-            if (gua.findPic("common_buy_ti_li.bmp", 321, 495, 524, 568))
+            if (gua.findPic("common_buy_ti_li.bmp", 503, 172, 636, 220))
             {
-                log("没有体力");
-                gua.stop();
+                System.Environment.Exit(0);
                 return true;
             }
             return false;

@@ -36,9 +36,7 @@ namespace YinYangShiGua2.core
         private GuaAction curAction;
 
         public Gua()
-        {
-            checkNeedInit();
-        }
+        {}
 
         private void checkNeedInit()
         {
@@ -137,14 +135,14 @@ namespace YinYangShiGua2.core
 
         public void stop()
         {
+            curAction = null;
+            isLive = false;
+
             if (looper != null)
             {
                 looper.Abort();
                 looper = null;
             }
-
-            curAction = null;
-            isLive = false;
 
             if (dm != null)
             {
