@@ -1,0 +1,11 @@
+F:\vs_program\YinYangShiGua2\YinYangShiGua2\YinYangShiGua2\bin\Debug\YinYangShiGua2.exe.config
+F:\vs_program\YinYangShiGua2\YinYangShiGua2\YinYangShiGua2\bin\Debug\YinYangShiGua2.exe
+F:\vs_program\YinYangShiGua2\YinYangShiGua2\YinYangShiGua2\bin\Debug\YinYangShiGua2.pdb
+F:\vs_program\YinYangShiGua2\YinYangShiGua2\YinYangShiGua2\obj\Debug\YinYangShiGua2.csprojResolveAssemblyReference.cache
+F:\vs_program\YinYangShiGua2\YinYangShiGua2\YinYangShiGua2\obj\Debug\YinYangShiGua2.MainForm.resources
+F:\vs_program\YinYangShiGua2\YinYangShiGua2\YinYangShiGua2\obj\Debug\YinYangShiGua2.Properties.Resources.resources
+F:\vs_program\YinYangShiGua2\YinYangShiGua2\YinYangShiGua2\obj\Debug\YinYangShiGua2.csproj.GenerateResource.Cache
+F:\vs_program\YinYangShiGua2\YinYangShiGua2\YinYangShiGua2\obj\Debug\YinYangShiGua2.exe
+F:\vs_program\YinYangShiGua2\YinYangShiGua2\YinYangShiGua2\obj\Debug\YinYangShiGua2.pdb
+F:\vs_program\YinYangShiGua2\YinYangShiGua2\YinYangShiGua2\obj\Debug\Interop.Dm.dll
+F:\vs_program\YinYangShiGua2\YinYangShiGua2\YinYangShiGua2\obj\Debug\YinYangShiGua2.csproj.ResolveComReference.cache
