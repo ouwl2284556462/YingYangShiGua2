@@ -11,6 +11,9 @@ namespace YinYangShiGua2.core
         //监听调试信息的Listener
         private static List<Action<String>> debugMsgChgListenerList = new List<Action<string>>();
 
+        //监听停止信息
+        private static List<Action> stopEvenListenerList = new List<Action>();
+
         //调试信息
         private static String debugMsg;
 
@@ -49,6 +52,22 @@ namespace YinYangShiGua2.core
         {
             debugMsgChgListenerList.ForEach(cb =>{
                 cb.Invoke(debugMsg);
+            });
+        }
+
+        public static void addStopEvenListener(Action callback)
+        {
+            lock (locker)
+            {
+                stopEvenListenerList.Add(callback);
+            }
+        }
+
+        public static void notifyStop()
+        {
+            stopEvenListenerList.ForEach(cb =>
+            {
+                cb.Invoke();
             });
         }
 

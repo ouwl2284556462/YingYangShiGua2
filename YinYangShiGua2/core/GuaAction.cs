@@ -28,7 +28,8 @@ namespace YinYangShiGua2.core
         {
             if (gua.findPic("common_buy_ti_li.bmp", 503, 172, 636, 220))
             {
-                System.Environment.Exit(0);
+                //通知停止
+                GlobalStatus.notifyStop();
                 return true;
             }
             return false;

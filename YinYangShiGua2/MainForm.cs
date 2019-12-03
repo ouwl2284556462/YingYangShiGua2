@@ -22,6 +22,27 @@ namespace YinYangShiGua2
             InitializeComponent();
             uiLogAction = new Action<String>(msg => log(msg));
             GlobalStatus.addMsgChgListener(onDebugMsgChg);
+            GlobalStatus.addStopEvenListener(onStopEvenOccur);
+        }
+
+        private void onStopEvenOccur()
+        {
+            //如果调用控件的线程和创建创建控件的线程不是同一个则为True
+            if (this.stopBtn.InvokeRequired)
+            {
+                while (!this.stopBtn.IsHandleCreated)
+                {
+                    //解决窗体关闭时出现“访问已释放句柄“的异常
+                    if (this.stopBtn.Disposing || this.stopBtn.IsDisposed)
+                        return;
+                }
+
+                this.stopBtn.Invoke(new Action(() => this.stopBtn.PerformClick()));
+            }
+            else
+            {
+                this.stopBtn.PerformClick();
+            }
         }
 
         private void onDebugMsgChg(String deBugMsg)
@@ -52,7 +73,7 @@ namespace YinYangShiGua2
 
         private void jueXingBtn_Click(object sender, EventArgs e)
         {
-            gua.startGuaJi(Gua.GuaJiType.JUE_XING);
+            gua.startGuaJi(Gua.GuaJiType.JUE_XING, getInputData());
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -68,6 +89,31 @@ namespace YinYangShiGua2
         private void stopBtn_Click(object sender, EventArgs e)
         {
             gua.stop();
+        }
+
+        private void yunHunBtn_Click(object sender, EventArgs e)
+        {
+            gua.startGuaJi(Gua.GuaJiType.YU_HUN, getInputData());
+        }
+
+        private InputData getInputData()
+        {
+            InputData data = new InputData();
+            data.yuHunDoCount = getIntFormTextBox(yunHunCntTextBox);
+            data.jueXingDoCount = getIntFormTextBox(juXingCntTextBox);
+            return data;
+        }
+
+        private int? getIntFormTextBox(TextBox textBox)
+        {
+            try
+            {
+                return int.Parse(textBox.Text);
+            }
+            catch
+            {
+                return null;
+            }
         }
 
   

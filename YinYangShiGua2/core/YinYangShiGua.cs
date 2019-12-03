@@ -154,20 +154,26 @@ namespace YinYangShiGua2.core
         }
 
 
-        private void doJueXingFuBen()
+        private void doJueXingFuBen(InputData inputData)
         {
-            curAction = new JueXingFuBenAction(this);
+            curAction = new JueXingFuBenAction(this, inputData.jueXingDoCount);
         }
 
-        public void startGuaJi(GuaJiType type)
+        private void doYuHunFuBen(InputData inputData)
+        {
+            curAction = new YuHunFuBenAction(this, inputData.yuHunDoCount);
+        }
+
+        public void startGuaJi(GuaJiType type, InputData inputData)
         {
             checkNeedInit();
             switch (type)
             {
                 case GuaJiType.JUE_XING:
-                    doJueXingFuBen();
+                    doJueXingFuBen(inputData);
                     break;
                 case GuaJiType.YU_HUN:
+                    doYuHunFuBen(inputData);
                     break;
                 case GuaJiType.PU_TONG_FU_BEN:
                     break;
